@@ -20,7 +20,7 @@ typedef struct {
     int flag;
 } VERTICE;
 
-// Funções auxiliares da funcao caminhosGrafo
+// Funï¿½ï¿½es auxiliares da funcao caminhosGrafo
 void inicializarFlags(VERTICE* g, int n){
     for (int i = 1; i <= n; ++i) g[i].flag = 0;
 }
@@ -83,7 +83,7 @@ void buscaProfundidade(VERTICE* g, int x, int y, int d, NO* resp, NO* lista){
     while(p){
         if(g[p->vert].flag == 0){
             inserirElemLista(lista, p->vert);
-            if(g[p->vert].flag == 0) buscaProfundidade(g, p->vert, y, d, resp, lista);
+            buscaProfundidade(g, p->vert, y, d, resp, lista);
             removerElemLista(lista);
         }
         p = p->prox;
@@ -101,12 +101,12 @@ NO* caminhosGrafo(VERTICE* g, int n, int x, int y, int d){
 
     inicializarFlags(g, n);
 
-    // Primeiro nó:
+    // Primeiro nï¿½:
     NO* lista = (NO*)malloc(sizeof(NO));
     lista->vert = x;
     lista->prox = NULL;
 
-    // Primeiro nó lista resposta:
+    // Primeiro nï¿½ lista resposta:
     NO* resp = (NO*)malloc(sizeof(NO));
     resp->vert = -1;
     resp->prox = NULL;
