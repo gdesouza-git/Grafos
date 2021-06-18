@@ -4,10 +4,6 @@
 #include <stdlib.h>
 #include <malloc.h>
 
-int nroUSP() {
-    return 11851042;
-}
-
 // Grafo
 typedef struct listaAdjacencia {
     int vert;
@@ -20,7 +16,7 @@ typedef struct {
     int flag;
 } VERTICE;
 
-// Fun��es auxiliares da funcao caminhosGrafo
+// Funcoes auxiliares da funcao caminhosGrafo
 void inicializarFlags(VERTICE* g, int n){
     for (int i = 1; i <= n; ++i) g[i].flag = 0;
 }
@@ -101,12 +97,12 @@ NO* caminhosGrafo(VERTICE* g, int n, int x, int y, int d){
 
     inicializarFlags(g, n);
 
-    // Primeiro n�:
+    // Primeiro no:
     NO* lista = (NO*)malloc(sizeof(NO));
     lista->vert = x;
     lista->prox = NULL;
 
-    // Primeiro n� lista resposta:
+    // Primeiro no lista resposta:
     NO* resp = (NO*)malloc(sizeof(NO));
     resp->vert = -1;
     resp->prox = NULL;
