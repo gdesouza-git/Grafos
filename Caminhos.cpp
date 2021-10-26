@@ -40,6 +40,7 @@ void inserirElemLista(NO* p, int ch){
     }
 }
 
+//Remover da lista
 void removerElemLista(NO* p){
     NO* ant = encontrarPenultimo(p);
     while (p->prox) p = p->prox;
@@ -47,6 +48,7 @@ void removerElemLista(NO* p){
     free(p);
 }
 
+//Verificar tamanho
 int verificarTamanho(NO* p, int d){
     int it = 0;
     while (p){
